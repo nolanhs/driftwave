@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create account — Noema</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./auth.css">
+</head>
+
+<body class="auth-page">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__grid"></div>
+  </div>
+
+  <main class="auth-layout">
+    <section class="auth-intro auth-intro--signup">
+      <a class="landing-brand" href="./index.html">
+        <span class="landing-brand__mark">N</span>
+        <span>noema</span>
+      </a>
+
+      <div>
+        <p class="hero-eyebrow">CREATE YOUR SPACE</p>
+        <h1>Sound that learns your rhythm.</h1>
+        <p>
+          Start building a personal library of environments for every state of mind.
+        </p>
+      </div>
+
+      <div class="auth-benefits">
+        <span>✓ Save favorite environments</span>
+        <span>✓ Track your sessions</span>
+        <span>✓ Keep your space across devices</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card__heading">
+          <p class="hero-eyebrow">START LISTENING</p>
+          <h2>Create an account</h2>
+          <p>You can add subscription access after the core experience is ready.</p>
+        </div>
+
+        <form id="signup-form" novalidate>
+          <label class="auth-field">
+            <span>Display name</span>
+            <input
+              id="signup-name"
+              name="displayName"
+              type="text"
+              autocomplete="name"
+              placeholder="What should we call you?"
+              maxlength="50"
+              required
+            >
+          </label>
+
+          <label class="auth-field">
+            <span>Email address</span>
+            <input
+              id="signup-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+          </label>
+
+          <label class="auth-field">
+            <span>Password</span>
+            <input
+              id="signup-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="At least 6 characters"
+              minlength="6"
+              required
+            >
+          </label>
+
+          <label class="auth-field">
+            <span>Confirm password</span>
+            <input
+              id="signup-confirm-password"
+              name="confirmPassword"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Enter it again"
+              minlength="6"
+              required
+            >
+          </label>
+
+          <button id="signup-submit" class="auth-submit" type="submit">
+            <span>Create my account</span>
+            <span>↗</span>
+          </button>
+
+          <p id="auth-message" class="auth-message" role="status"></p>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="./login.html">Log in</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Log in — DriftWave</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./auth.css">
+</head>
+
+<body class="auth-page">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__grid"></div>
+  </div>
+
+  <main class="auth-layout">
+    <section class="auth-intro">
+      <a class="landing-brand" href="./index.html">
+        <span class="landing-brand__mark">N</span>
+        <span>DriftWave</span>
+      </a>
+
+      <div>
+        <p class="hero-eyebrow">WELCOME BACK</p>
+        <h1>Return to your space.</h1>
+        <p>
+          Your environments, session history, and favorite states are waiting.
+        </p>
+      </div>
+
+      <blockquote>
+        “One place for every version of your day.”
+      </blockquote>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card__heading">
+          <p class="hero-eyebrow">MEMBER ACCESS</p>
+          <h2>Log in</h2>
+          <p>Enter the account details you used to sign up.</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <label class="auth-field">
+            <span>Email address</span>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+          </label>
+
+          <label class="auth-field">
+            <span>Password</span>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Your password"
+              minlength="6"
+              required
+            >
+          </label>
+
+          <button id="login-submit" class="auth-submit" type="submit">
+            <span>Enter Noema</span>
+            <span>↗</span>
+          </button>
+
+          <p id="auth-message" class="auth-message" role="status"></p>
+        </form>
+
+        <p class="auth-switch">
+          New here?
+          <a href="./signup.html">Create an account</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./auth.js"></script>
+</body>
+</html>

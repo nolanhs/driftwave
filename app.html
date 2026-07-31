@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DriftWave — Your Space</title>
+  <meta
+    name="description"
+    content="Choose how you want to feel and enter a personalized audio environment."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body data-vibe="sleep">
+  <div class="background">
+    <div class="background__glow background__glow--one"></div>
+    <div class="background__glow background__glow--two"></div>
+    <div class="background__noise"></div>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#" aria-label="Noema home">
+        <span class="brand__mark">N</span>
+        <span class="brand__name">DriftWave</span>
+      </a>
+
+      <nav class="nav-list">
+        <button class="nav-item nav-item--active" data-view="home">
+          <span class="nav-item__icon">⌂</span>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-view="history">
+          <span class="nav-item__icon">◷</span>
+          <span>History</span>
+        </button>
+
+        <button class="nav-item" data-view="favorites">
+          <span class="nav-item__icon">♡</span>
+          <span>Favorites</span>
+        </button>
+      </nav>
+
+      <div class="sidebar__bottom">
+        <div class="mini-profile">
+          <div class="mini-profile__avatar">N</div>
+          <div>
+            <strong id="profile-name">Guest</strong>
+            <span id="profile-plan">Member</span>
+          </div>
+        </div>
+
+        <button id="sign-out-button" class="icon-button" title="Sign out">
+          ↗
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR SPACE</p>
+          <h1>How do you want to feel?</h1>
+        </div>
+
+        <div class="topbar__actions">
+          <button id="sound-toggle" class="pill-button" type="button">
+            <span id="sound-toggle-icon">◉</span>
+            <span id="sound-toggle-label">Sound on</span>
+          </button>
+
+          <button class="profile-button" type="button" aria-label="Open profile">
+            <span class="profile-button__avatar">N</span>
+          </button>
+        </div>
+      </header>
+
+      <section id="home-view" class="view view--active">
+        <div class="vibe-grid" aria-label="Choose a vibe">
+          <button class="vibe-card vibe-card--active" data-vibe="sleep">
+            <span class="vibe-card__symbol">☾</span>
+            <span class="vibe-card__name">Sleep</span>
+            <span class="vibe-card__description">Slow down and drift away</span>
+          </button>
+
+          <button class="vibe-card" data-vibe="study">
+            <span class="vibe-card__symbol">⌁</span>
+            <span class="vibe-card__name">Study</span>
+            <span class="vibe-card__description">Settle into deep focus</span>
+          </button>
+
+          <button class="vibe-card" data-vibe="create">
+            <span class="vibe-card__symbol">✦</span>
+            <span class="vibe-card__name">Create</span>
+            <span class="vibe-card__description">Open up your imagination</span>
+          </button>
+
+          <button class="vibe-card" data-vibe="workout">
+            <span class="vibe-card__symbol">↯</span>
+            <span class="vibe-card__name">Workout</span>
+            <span class="vibe-card__description">Move with more energy</span>
+          </button>
+
+          <button class="vibe-card" data-vibe="calm">
+            <span class="vibe-card__symbol">≈</span>
+            <span class="vibe-card__name">Calm</span>
+            <span class="vibe-card__description">Release tension and reset</span>
+          </button>
+
+          <button class="vibe-card" data-vibe="learn">
+            <span class="vibe-card__symbol">◇</span>
+            <span class="vibe-card__name">Learn</span>
+            <span class="vibe-card__description">Stay alert and absorb more</span>
+          </button>
+        </div>
+
+        <section class="session-panel">
+          <div class="session-panel__art">
+            <div class="orb">
+              <div class="orb__core"></div>
+              <div class="orb__ring orb__ring--one"></div>
+              <div class="orb__ring orb__ring--two"></div>
+            </div>
+          </div>
+
+          <div class="session-panel__content">
+            <div class="session-panel__heading">
+              <div>
+                <p class="eyebrow">RECOMMENDED FOR YOU</p>
+                <h2 id="session-title">Midnight Drift</h2>
+                <p id="session-description">
+                  Soft pads, distant rain, and low-frequency textures for a quieter mind.
+                </p>
+              </div>
+
+              <button id="favorite-button" class="favorite-button" type="button" title="Favorite">
+                ♡
+              </button>
+            </div>
+
+            <div class="session-options">
+              <label class="field-group">
+                <span>Duration</span>
+                <select id="duration-select">
+                  <option value="5">5 minutes</option>
+                  <option value="10">10 minutes</option>
+                  <option value="20" selected>20 minutes</option>
+                  <option value="30">30 minutes</option>
+                  <option value="45">45 minutes</option>
+                  <option value="60">60 minutes</option>
+                </select>
+              </label>
+
+              <label class="field-group">
+                <span>Environment</span>
+                <select id="track-select"></select>
+              </label>
+            </div>
+
+            <div class="player">
+              <div class="player__top">
+                <button id="play-button" class="play-button" type="button" aria-label="Play session">
+                  ▶
+                </button>
+
+                <div class="player__progress-area">
+                  <div class="player__time-row">
+                    <span id="elapsed-time">00:00</span>
+                    <span id="remaining-time">20:00</span>
+                  </div>
+
+                  <button
+                    id="progress-track"
+                    class="progress-track"
+                    type="button"
+                    aria-label="Session progress"
+                  >
+                    <span id="progress-fill" class="progress-track__fill"></span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="player__bottom">
+                <label class="volume-control">
+                  <span>Volume</span>
+                  <input
+                    id="volume-slider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.72"
+                  >
+                </label>
+
+                <button id="reset-button" class="text-button" type="button">
+                  Reset session
+                </button>
+              </div>
+            </div>
+
+            <p id="status-message" class="status-message" role="status"></p>
+          </div>
+        </section>
+
+        <section class="insights-row">
+          <article class="insight-card">
+            <span class="insight-card__label">This week</span>
+            <strong id="weekly-minutes">0 min</strong>
+            <span>time spent in your space</span>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-card__label">Favorite vibe</span>
+            <strong id="favorite-vibe">Sleep</strong>
+            <span>based on your sessions</span>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-card__label">Current streak</span>
+            <strong id="current-streak">0 days</strong>
+            <span>keep showing up</span>
+          </article>
+        </section>
+      </section>
+
+      <section id="history-view" class="view">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">YOUR RHYTHM</p>
+            <h2>Recent sessions</h2>
+          </div>
+
+          <button id="clear-history-button" class="text-button" type="button">
+            Clear local history
+          </button>
+        </div>
+
+        <div id="history-list" class="history-list"></div>
+      </section>
+
+      <section id="favorites-view" class="view">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">SAVED</p>
+            <h2>Your favorite environments</h2>
+          </div>
+        </div>
+
+        <div id="favorites-list" class="favorites-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <audio id="audio-player" preload="metadata" loop></audio>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
