@@ -60,17 +60,17 @@ async function requireAuthenticatedUser() {
 const vibes = {
   sleep: {
     label: "Sleep",
-    title: "Midnight Drift",
+    title: "Rainy Drift",
     description:
       "Soft pads, distant rain, and low-frequency textures for a quieter mind.",
     accent: "#769cff",
     background: "#08111f",
     tracks: [
       {
-        id: "midnight-drift",
-        title: "Midnight Drift",
+        id: "rainy-drift",
+        title: "Rainy Drift",
         subtitle: "Rain + ambient pads",
-        storagePath: "sleep/midnight-drift.mp3"
+        storagePath: "audio/rain1.mp3"
       },
       {
         id: "dark-ocean",
