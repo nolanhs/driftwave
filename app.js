@@ -70,7 +70,7 @@ const vibes = {
         id: "rainy-drift",
         title: "Rainy Drift",
         subtitle: "Rain + ambient pads",
-        storagePath: "audio/rain1.mp3"
+        storagePath: "audio/rain/rain1.mp3"
       },
       {
         id: "dark-ocean",
@@ -366,7 +366,7 @@ function updateSessionContent() {
 
 function loadAudioTrack() {
   const track = getCurrentTrack();
-  const audioUrl = getAudioUrl(track.storagePath);
+  const audioUrl = `/${track.storagePath}`;
 
   elements.audio.pause();
   elements.audio.src = audioUrl;
